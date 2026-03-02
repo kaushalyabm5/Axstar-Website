@@ -5,6 +5,10 @@
     --font-logo: "Montserrat", sans-serif;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Poppins', sans-serif;
 }
@@ -44,7 +48,3 @@ body{
   transition: all 0.3s ease;
 }
 
-/* ===== Hover Effect ===== */
-::-webkit-scrollbar-thumb:hover {
-  background: #ff33ff;
-}

@@ -1,17 +1,16 @@
 
-import About from './components/About';
-import AboutPart2 from './components/AboutPart2';
-import AboutPart3 from './components/AboutPart3';
+
 import AboutPart5 from './components/AboutPart5';
-import CardCarousel from './components/CardCarousel';
+
 import Contact from './components/Contact';
 import Hero from './components/Hero';
 import HeroCarousel from './components/HeroCarousel';
 import Navbar from './components/Navbar';
-import Projects from './components/Projects';
+import ScrollToTop from './components/ScrollToTop';
+
 import SmoothScroll from './components/SmoothScroll';
 import StatPart2 from './components/StatPart2';
-import Stats from './components/Stats';
+
 import WhatWeDo from './components/WhatWeDo';
 
 
@@ -44,6 +43,7 @@ const App = () => {
     <WhatWeDo />
     <HeroCarousel />
     <Contact />
+    <ScrollToTop />
   </div>
 </div>
     </SmoothScroll>

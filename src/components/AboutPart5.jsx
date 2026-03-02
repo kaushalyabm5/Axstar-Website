@@ -1,9 +1,57 @@
-import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+
+
+
 
 export default function AboutPart5() {
+
+  const sectionRef = useRef(null);
+  const h1Ref = useRef(null);
+  const pRef = useRef(null);
+  
+
+  useGSAP(
+    () => {
+      gsap.from(h1Ref.current, {
+        y: 80,
+        opacity: 0,
+        duration: 1.1,
+        ease: "power4.in",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        
+      });
+
+      gsap.from(pRef.current, {
+        y: 0,
+        opacity: 0,
+        duration: 1.1,
+        delay: .5,
+        ease: "power3.in",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 60%",
+          toggleActions: "play none none none",
+        },
+      });
+
+
+    },
+    { scope: sectionRef }
+  );
+
+
+
   return (
-    <section className="relative w-full min-h-[70vh] md:min-h-[80vh] bg-[#0b1117] overflow-hidden flex items-center justify-center lg:pt-20 lg:pb-15 px-4">
+    <section ref={sectionRef} id="about" className="relative w-full min-h-[70vh] md:min-h-[80vh] bg-[#0b1117] overflow-hidden flex items-center justify-center lg:pt-20 lg:pb-15 px-4">
       {/* Background glow */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_55%)]" />
@@ -26,9 +74,9 @@ export default function AboutPart5() {
 
       {/* Main content */}
       <div className="relative z-10 text-center max-w-5xl mx-auto">
-        <h2 className="text-white font-semibold leading-[0.95] tracking-tight">
+        <h2 ref={h1Ref} className="text-white font-semibold leading-[0.95] tracking-tight">
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-            WE BUILD 
+            WE <span className="text-cyan-400"> BUILD</span> 
           </span>
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             STRATEGIC–DRIVEN 
@@ -39,7 +87,7 @@ export default function AboutPart5() {
         </h2>
 
         {/* Right paragraph */}
-        <p className="mt-6 md:mt-8 text-gray-400 text-xs sm:text-sm md:text-base max-w-md mx-auto">
+        <p ref={pRef} className="mt-6 md:mt-8 text-gray-400 text-xs sm:text-sm md:text-base max-w-md mx-auto">
           We design, develop, and deploy websites that combine clean design, smart strategy, and scalable technology — helping your business grow and stand out online.
         </p>
 

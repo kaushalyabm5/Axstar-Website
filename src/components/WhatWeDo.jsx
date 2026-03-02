@@ -1,6 +1,75 @@
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function WhatWeDo() {
+  const sectionRef = useRef(null);
+  const Animation1Ref = useRef(null);
+  const Animation2Ref = useRef(null);
+  const Animation3Ref = useRef(null);
+  const Animation4Ref = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.from(Animation1Ref.current, {
+        y:0,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.in",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      gsap.from(Animation2Ref.current, {
+        x:100,
+        opacity: 0,
+        duration: 1,
+        delay: 1,
+        ease: "power3.in",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      gsap.from(Animation3Ref.current, {
+        x:-100,
+        opacity: 0,
+        duration: 1.3,
+        delay: 1.2,
+        ease: "power3.in",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+      });
+
+       gsap.from(Animation4Ref.current, {
+        y:-100,
+        opacity: 0,
+        duration: 1.3,
+        delay: 1.5,
+        ease: "power3.in",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+      });
+    }
+  )
+
+
+
   const cards = [
     {
       tag: "PROFESSIONALISM",
@@ -20,35 +89,35 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section className="relative w-full bg-[#0b1117]/0 overflow-hidden">
+    <section ref={sectionRef} id="discover" className="relative w-full bg-[#0b1117]/0 overflow-hidden">
       {/* ===== Background image/overlay look ===== */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(120,130,150,0.25),transparent_55%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1117]/40 via-[#0b1117]/60 to-[#0b1117]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1117]/40 via-[#0b1117]/60 to-[#0b1117]/40" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
         {/* ===== Top header ===== */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-12 md:mb-16">
           <div className="max-w-3xl">
-            <p className="text-[10px] tracking-[0.25em] text-gray-400 mb-4">
+            <p ref={Animation1Ref} className="text-[10px] tracking-[0.25em] text-gray-400 mb-4">
               • WHAT WE DO
             </p>
 
-            <h2 className="text-white font-semibold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 ref={Animation2Ref} className="text-white font-semibold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               Turning ideas into responsive websites and
               <br className="hidden sm:block" /> measurable 
               <span className="text-cyan-400"> business</span> results.
             </h2>
           </div>
 
-          <p className="text-gray-400 text-sm md:text-base max-w-md">
+          <p ref={Animation3Ref} className="text-gray-400 text-sm md:text-base max-w-md">
             Delivering responsive, user-friendly websites and web solutions that help businesses connect with customers and achieve real results.
           </p>
         </div>
 
         {/* ===== Cards ===== */}
-        <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div ref={Animation4Ref} className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, i) => (
             <div
               key={i}

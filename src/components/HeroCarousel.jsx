@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Projects from "./Projects";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const slides = [
   {
@@ -26,6 +31,46 @@ const slides = [
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+
+  const sectionRef = useRef(null);
+  const Animation1Ref = useRef(null);
+  const Animation2Ref = useRef(null);
+
+
+
+
+  useGSAP(
+      () => {
+        gsap.from(Animation1Ref.current, {
+          x:100,
+          opacity: 0,
+          delay:1,
+          duration: 1.5,
+          ease: "power3.in",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none none",
+          },
+        });
+  
+        gsap.from(Animation2Ref.current, {
+          x:-100,
+          opacity: 0,
+          duration: 1.5,
+          delay: 1,
+          ease: "power3.in",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none none",
+          },
+        });
+  
+  
+        
+      }
+    )
 
   const nextSlide = () => {
     setDirection(1);
@@ -62,7 +107,7 @@ export default function HeroCarousel() {
 };
 
   return (
-    <section className="relative w-full">
+    <section ref={sectionRef} id="projects" className="relative w-full">
       <div className="relative w-full min-h-[75vh] overflow-hidden pb-25 pt-10">
 
         {/* Overlay */}
@@ -95,7 +140,7 @@ export default function HeroCarousel() {
               <div className="flex flex-col lg:flex-row min-h-[75vh]">
 
                 {/* LEFT */}
-                <div className="w-full lg:w-[40%] flex items-center">
+                <div ref={Animation1Ref} className="w-full lg:w-[40%] flex items-center">
                   <div className="px-6 md:px-12 text-white space-y-6">
                     <h1 className="text-3xl md:text-5xl font-bold">
                       {slides[current].title}
@@ -107,11 +152,9 @@ export default function HeroCarousel() {
 
                     <div className="flex gap-4">
                       <button className="cursor-pointer px-6 py-3 bg-white text-black rounded font-medium hover:bg-gray-200 transition">
-                        View Project
+                        View Project Details
                       </button>
-                      <button className="cursor-pointer px-6 py-3 border border-white/50 rounded hover:bg-white/10 transition">
-                        Details
-                      </button>
+                      
                     </div>
 
                     {/* Controls */}
@@ -133,7 +176,7 @@ export default function HeroCarousel() {
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[60%] flex items-center mt-6 lg:mt-0">
+                <div ref={Animation2Ref} className="w-full lg:w-[60%] flex items-center mt-6 lg:mt-0">
                   <div className="w-full h-[90%] mx-4 md:mx-8 rounded-xl overflow-hidden relative shadow-lg">
                     <img
                       src={slides[current].image}

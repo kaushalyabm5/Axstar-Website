@@ -1,9 +1,36 @@
-import React from "react";
-import { FaFacebook } from "react-icons/fa";
+import React, { useRef } from "react";
+import { FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FiMapPin, FiPhone } from "react-icons/fi";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+
+  const sectionRef = useRef(null);
+ 
+
+  useGSAP(
+      () => {
+        gsap.from(sectionRef.current, {
+          y:-100,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none none",
+          },
+        });
+        
+      }
+    )
+
   return (
-    <section className="w-full bg-black text-white px-6 md:px-12 lg:px-20 py-16">
+    <section ref={sectionRef} id="contact" className="w-full bg-black text-white px-6 md:px-12 lg:px-20 py-16">
       <div className="max-w-7xl mx-auto">
 
         {/* Main Grid */}
@@ -17,7 +44,7 @@ const Contact = () => {
             </h1>
 
             <div className="space-y-4 text-gray-400 text-sm sm:text-base max-w-md">
-              <p>attitude@mail.com</p>
+              <p className="text-cyan-400">cloudcodeorg@proton.me</p>
 
               <p className="leading-relaxed">
                Reach out to discuss your project, and let us create a website that drives results and grows your business.
@@ -31,8 +58,8 @@ const Contact = () => {
           <div className="space-y-10">
 
             <div className="text-sm text-gray-300 space-y-1">
-              <p>+94 74 113 7308</p>
-              <p>+94 72 877 9773</p>
+              <p className="flex items-center gap-2.5"><FiPhone />+94 74 113 7308</p>
+              <p className="flex items-center gap-2.5"><FaWhatsapp />+94 72 877 9773</p>
             </div>
 
             <div className="space-y-6 text-gray-400 text-sm leading-relaxed">
@@ -45,7 +72,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="text-white font-medium mb-2">SRI LANKA 🇱🇰</h3>
+                <h3 className="text-white font-medium mb-2 flex items-center gap-2.5"><FiMapPin className="text-[1.3rem] text-cyan-400"/>SRI LANKA 🇱🇰</h3>
                 <p>
                   Located in Sri Lanka, delivering expert web solutions to grow your business.
                 </p>
@@ -56,7 +83,7 @@ const Contact = () => {
 
           {/* RIGHT IMAGE */}
           <div className="flex justify-start lg:justify-end">
-            <h1 className="text-[1rem] sm:text-[1rem] md:text-[1rem] lg:text-[1rem] font-light tracking-widest">
+            <h1 className="text-[1rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem] font-light tracking-widest">
             &lt;CLOU<span className="text-cyan-400">DC</span>ODE/&gt;
           </h1>
           </div>

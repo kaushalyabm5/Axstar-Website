@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
@@ -27,7 +26,7 @@ const Hero = () => {
         duration: 1.3,
         stagger: 0.3,
         ease: "power3.out",
-        delay: .5,
+        delay: 0.5,
       });
 
       gsap.from(".buttons-animate", {
@@ -39,13 +38,11 @@ const Hero = () => {
         delay: 1.5,
       });
 
-    
-
       // CARDS ANIMATION (on scroll)
       gsap.from(".card-animate", {
         opacity: 0,
         y: 80,
-        delay:1.7,
+        delay: 1.7,
         duration: 1.4,
         stagger: 0.3,
         ease: "power3.out",
@@ -63,9 +60,16 @@ const Hero = () => {
     <section
       ref={container}
       id="home"
-      className="relative w-full text-white flex items-center"
+      className="relative w-full text-white flex items-center overflow-hidden"
     >
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 flex flex-col lg:min-h-screen">
+      {/* ===== Overlay (above bg image, below content) ===== */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(120,130,150,0.25),transparent_55%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1117]/40 via-[#0b1117]/60 to-[#0b1117]/40" />
+      </div>
+
+      {/* ===== CONTENT WRAPPER ===== */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 flex flex-col lg:min-h-screen">
 
         {/* TOP CONTENT */}
         <div className="space-y-6 max-w-xl mt-12 md:mt-20">
@@ -76,7 +80,7 @@ const Hero = () => {
           </p>
 
           <h1 className="h-animate text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-widest">
-            CLOU<span className="text-cyan-400">DC</span>ODE
+            CLOU<span className="text-[#ff00ea]">DC</span>ODE
           </h1>
 
           <div className="buttons-animate flex flex-wrap gap-4 pt-4">
@@ -119,7 +123,6 @@ const Hero = () => {
           </div>
 
         </div>
-
       </div>
     </section>
   );

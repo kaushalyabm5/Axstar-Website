@@ -31,19 +31,15 @@ const ScrollToTop = () => {
   return (
     <>
       {isVisible && (
-        <div className="fixed right-6 bottom-6 flex flex-col items-center z-50">
-          
-         
-
-          {/* Button */}
-          <button
-            onClick={scrollToTop}
-            className="cursor-pointer bg-black text-white p-3 rounded-full shadow-lg hover:bg-cyan-500 transition-all duration-300"
-          >
-            <FaArrowUp />
-          </button>
-        </div>
-      )}
+  <div className="hidden md:flex fixed right-6 bottom-6 flex-col items-center z-50">
+    <button
+      onClick={scrollToTop}
+      className="cursor-pointer bg-black text-white p-3 rounded-full shadow-lg hover:bg-[#ff00ea] transition-all duration-300"
+    >
+      <FaArrowUp />
+    </button>
+  </div>
+)}
     </>
   );
 };

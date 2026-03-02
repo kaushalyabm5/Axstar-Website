@@ -7,10 +7,12 @@
 
 html{
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body{
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 .logo{

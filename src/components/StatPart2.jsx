@@ -19,9 +19,9 @@ gsap.registerPlugin(ScrollTrigger);
 const StatCard = ({ start, value, suffix = "", label, className = "" }) => {
   return (
     <div
-      className={`bg-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col justify-center min-h-[140px] ${className}`}
+      className={`bg-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col justify-center items-center min-h-[140px] ${className}`}
     >
-      <h2 className="text-white text-3xl md:text-4xl font-bold">
+      <h2 className="text-white text-3xl md:text-5xl font-bold">
         {start ? <CountUp end={value} duration={5.2} /> : 0}
         {suffix}
       </h2>
@@ -60,7 +60,7 @@ export default function StatPart2() {
       gsap.from(Animate1Ref.current, {
         x:100,
         opacity: 0,
-        duration: 1.2,
+        duration: 1,
         ease: "power3.in",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -72,7 +72,7 @@ export default function StatPart2() {
       gsap.from(Animate2Ref.current, {
         x:-100,
         opacity: 0,
-        duration: 1.2,
+        duration: 1,
         delay: .5,
         ease: "power3.in",
         scrollTrigger: {
@@ -85,8 +85,8 @@ export default function StatPart2() {
       gsap.from(leftAnimate.current, {
         y: 100,
         opacity: 0,
-        duration: 1.2,
-        delay: 1.2,
+        duration: 1,
+        delay: .8,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -127,7 +127,7 @@ export default function StatPart2() {
             <h2 ref={Animate1Ref} className="text-white text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
               We Turn Ideas 
               <br />
-              Into <span className="text-cyan-400">Powerful </span>Digital Experiences
+              Into <span className="text-[#ff00ea]">Powerful </span>Digital Experiences
             </h2>
           </div>
 

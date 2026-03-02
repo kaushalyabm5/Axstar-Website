@@ -16,7 +16,7 @@ const Projects = () => {
         gsap.from(AnimationRef.current, {
           x:100,
           opacity: 0,
-          duration:.5,
+          duration:1,
           ease: "power3.in",
           scrollTrigger: {
             trigger: sectionRef.current,

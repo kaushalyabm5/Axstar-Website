@@ -76,7 +76,7 @@ export default function AboutPart5() {
       <div className="relative z-10 text-center max-w-5xl mx-auto">
         <h2 ref={h1Ref} className="text-white font-semibold leading-[0.95] tracking-tight">
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-            WE <span className="text-cyan-400"> BUILD</span> 
+            WE <span className="text-[#ff00ea]"> BUILD</span> 
           </span>
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             STRATEGIC–DRIVEN 

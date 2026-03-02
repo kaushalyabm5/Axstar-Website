@@ -6,7 +6,7 @@ export default function SmoothScroll({ children }) {
     const lenis = new Lenis({
       duration: 1,
       smooth: true,
-      wheelMultiplier: 0.35,
+      wheelMultiplier: 0.17,
       touchMultiplier: 1.5,
       lerp: 0.12,
       easing: (t) => 1 - Math.pow(1 - t, 4),

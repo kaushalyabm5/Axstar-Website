@@ -18,8 +18,8 @@ export default function WhatWeDo() {
       gsap.from(Animation1Ref.current, {
         y:0,
         opacity: 0,
-        duration: 1,
-        ease: "power3.in",
+        duration: .5,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 75%",
@@ -31,8 +31,8 @@ export default function WhatWeDo() {
         x:100,
         opacity: 0,
         duration: 1,
-        delay: 1,
-        ease: "power3.in",
+        delay: .8,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 75%",
@@ -43,9 +43,9 @@ export default function WhatWeDo() {
       gsap.from(Animation3Ref.current, {
         x:-100,
         opacity: 0,
-        duration: 1.3,
-        delay: 1.2,
-        ease: "power3.in",
+        duration: 1,
+        delay: 1,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 75%",
@@ -56,9 +56,9 @@ export default function WhatWeDo() {
        gsap.from(Animation4Ref.current, {
         y:-100,
         opacity: 0,
-        duration: 1.3,
-        delay: 1.5,
-        ease: "power3.in",
+        duration: 1,
+        delay: 1.1,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 75%",
@@ -107,7 +107,7 @@ export default function WhatWeDo() {
             <h2 ref={Animation2Ref} className="text-white font-semibold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               Turning ideas into responsive websites and
               <br className="hidden sm:block" /> measurable 
-              <span className="text-cyan-400"> business</span> results.
+              <span className="text-[#ff00ea]"> business</span> results.
             </h2>
           </div>
 
@@ -125,7 +125,7 @@ export default function WhatWeDo() {
             >
               {/* icon square */}
               <div className="w-10 h-10 rounded-lg border border-white/20 flex items-center justify-center mb-6">
-                <div className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ff00ea]" />
               </div>
 
               <div>

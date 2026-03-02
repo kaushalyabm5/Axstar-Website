@@ -30,7 +30,7 @@ const Contact = () => {
     )
 
   return (
-    <section ref={sectionRef} id="contact" className="w-full bg-black text-white px-6 md:px-12 lg:px-20 py-16">
+    <section ref={sectionRef} id="contact" className="w-full bg-black text-white pb-30 md:pb-16 lg:pb-16 px-6 md:px-12 lg:px-20 py-16">
       <div className="max-w-7xl mx-auto">
 
         {/* Main Grid */}
@@ -44,7 +44,7 @@ const Contact = () => {
             </h1>
 
             <div className="space-y-4 text-gray-400 text-sm sm:text-base max-w-md">
-              <p className="text-cyan-400">cloudcodeorg@proton.me</p>
+              <p className="text-[#ff00ea]">cloudcodeorg@proton.me</p>
 
               <p className="leading-relaxed">
                Reach out to discuss your project, and let us create a website that drives results and grows your business.
@@ -72,7 +72,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="text-white font-medium mb-2 flex items-center gap-2.5"><FiMapPin className="text-[1.3rem] text-cyan-400"/>SRI LANKA 🇱🇰</h3>
+                <h3 className="text-white font-medium mb-2 flex items-center gap-2.5"><FiMapPin className="text-[1.3rem] text-[#ff00ea]"/>SRI LANKA 🇱🇰</h3>
                 <p>
                   Located in Sri Lanka, delivering expert web solutions to grow your business.
                 </p>
@@ -84,7 +84,7 @@ const Contact = () => {
           {/* RIGHT IMAGE */}
           <div className="flex justify-start lg:justify-end">
             <h1 className="text-[1rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem] font-light tracking-widest">
-            &lt;CLOU<span className="text-cyan-400">DC</span>ODE/&gt;
+            &lt;CLOU<span className="text-[#ff00ea]">DC</span>ODE/&gt;
           </h1>
           </div>
 

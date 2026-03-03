@@ -13,43 +13,52 @@ export default function Navbar() {
   const [showTopBar, setShowTopBar] = useState(true);
   const lastScrollY = useRef(0);
 
-  // 🔥 Detect active section
+  /* ================= ACTIVE SECTION DETECTION (STABLE VERSION) ================= */
   useEffect(() => {
-    const sections = navItems.map((item) =>
-      document.getElementById(item.id)
-    );
+  const handleScroll = () => {
+    const scrollPosition =
+      window.scrollY + window.innerHeight / 2;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
+    let currentSection = "home";
 
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
+    navItems.forEach((item) => {
+      const section = document.getElementById(item.id);
+      if (!section) return;
+
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+
+      if (scrollPosition >= top && scrollPosition < bottom) {
+        currentSection = item.id;
+      }
     });
 
-    return () => {
-      sections.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
-  }, []);
+    // 🔥 Special case: bottom of page = contact
+    if (
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - 5
+    ) {
+      currentSection = "contact";
+    }
 
-  // 🔥 Hide top bar on scroll down (mobile only effect)
+    setActive(currentSection);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+  /* ================= MOBILE TOP BAR HIDE ON SCROLL ================= */
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth >= 768) return; // only mobile
+      if (window.innerWidth >= 768) return;
 
       if (window.scrollY > lastScrollY.current) {
-        setShowTopBar(false); // scrolling down
+        setShowTopBar(false);
       } else {
-        setShowTopBar(true); // scrolling up
+        setShowTopBar(true);
       }
 
       lastScrollY.current = window.scrollY;
@@ -62,18 +71,20 @@ export default function Navbar() {
   return (
     <>
       {/* ================= DESKTOP NAVBAR ================= */}
-      <nav className="hidden md:flex fixed top-5 left-1/2 -translate-x-1/2 w-[97%] px-10 py-5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[7rem] justify-between items-center z-50">
-        <h1 className="text-white font-[1rem] text-xl">
-          &lt;CLOU<span className="text-[#ff00ea]">DC</span>ODE/&gt;
+      <nav className="hidden md:flex fixed top-5 left-1/2 -translate-x-1/2 w-[97%] px-10 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[7rem] justify-between items-center z-50">
+        <h1 className="text-white text-xl">
+          &lt;CLOU<span className="text-[var(--primary-color)]">DC</span>ODE/&gt;
         </h1>
 
-        <ul className="flex gap-12 text-white">
+        <ul className="flex gap-12">
           {navItems.map((item) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className={`transition ${
-                  active === item.id ? "text-[#ff00ea]" : "text-white"
+                className={`transition duration-300 ${
+                  active === item.id
+                    ? "text-[var(--primary-color)]"
+                    : "text-white hover:text-white/70"
                 }`}
               >
                 {item.label}
@@ -89,12 +100,12 @@ export default function Navbar() {
           showTopBar ? "translate-y-0" : "-translate-y-full"
         } flex items-center justify-center`}
       >
-        <h1 className="text-white font-thin text-lg">
-          &lt;CLOU<span className="text-[#ff00ea]">DC</span>ODE/&gt;
+        <h1 className="text-white text-lg">
+          &lt;CLOU<span className="text-[var(--primary-color)]">DC</span>ODE/&gt;
         </h1>
       </div>
 
-      {/* ================= MOBILE BOTTOM GLASS NAVBAR ================= */}
+      {/* ================= MOBILE BOTTOM NAVBAR ================= */}
       <nav className="md:hidden fixed bottom-5 left-1/2 -translate-x-1/2 w-[92%] backdrop-blur-2xl bg-white/5 border border-white/20 rounded-full px-5 py-3 flex justify-between items-center shadow-2xl z-50">
         {navItems.map((item) => {
           const isActive = active === item.id;

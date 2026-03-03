@@ -30,7 +30,7 @@ const Projects = () => {
 
 
   return (
-    <section ref={sectionRef} className="pb-5 pt-12 px-5 sm:px-8 lg:px-16">
+    <section ref={sectionRef} className="pb-8 pt-7 px-5 sm:px-8 lg:px-16">
 
       <div className="max-w-[1400px] mx-auto">
 

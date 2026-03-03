@@ -74,9 +74,10 @@ export default function AboutPart5() {
 
       {/* Main content */}
       <div className="relative z-10 text-center max-w-5xl mx-auto">
-        <h2 ref={h1Ref} className="text-white font-semibold leading-[0.95] tracking-tight">
+        <div className="overflow-hidden">
+          <h2 ref={h1Ref} className="text-white font-semibold leading-[0.95] tracking-tight">
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-            WE <span className="text-[#ff00ea]"> BUILD</span> 
+            WE <span className="text-[var(--primary-color)]"> BUILD</span> 
           </span>
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             STRATEGIC–DRIVEN 
@@ -85,11 +86,16 @@ export default function AboutPart5() {
             SOLUTIONS
           </span>
         </h2>
+        </div>
+        
 
         {/* Right paragraph */}
-        <p ref={pRef} className="mt-6 md:mt-8 text-gray-400 text-xs sm:text-sm md:text-base max-w-md mx-auto">
+        <div className="overflow-hidden">
+          <p ref={pRef} className="mt-6 md:mt-8 text-[var(--primary-color)]/30 text-xs sm:text-sm md:text-base max-w-md mx-auto">
           We design, develop, and deploy websites that combine clean design, smart strategy, and scalable technology — helping your business grow and stand out online.
         </p>
+        </div>
+        
 
         {/* Scroll circle */}
         <div className="mt-10 md:mt-14 flex justify-center">

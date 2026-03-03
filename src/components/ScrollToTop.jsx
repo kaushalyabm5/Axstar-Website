@@ -34,7 +34,7 @@ const ScrollToTop = () => {
   <div className="hidden md:flex fixed right-6 bottom-6 flex-col items-center z-50">
     <button
       onClick={scrollToTop}
-      className="cursor-pointer bg-black text-white p-3 rounded-full shadow-lg hover:bg-[#ff00ea] transition-all duration-300"
+      className="cursor-pointer bg-black text-white p-3 rounded-full shadow-lg hover:bg-[var(--primary-color)] transition-all duration-300"
     >
       <FaArrowUp />
     </button>

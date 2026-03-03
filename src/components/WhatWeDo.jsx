@@ -90,11 +90,13 @@ export default function WhatWeDo() {
 
   return (
     <section ref={sectionRef} id="discover" className="relative w-full bg-[#0b1117]/0 overflow-hidden">
-      {/* ===== Background image/overlay look ===== */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(120,130,150,0.25),transparent_55%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1117]/40 via-[#0b1117]/60 to-[#0b1117]/40" />
-      </div>
+     
+
+      {/* Background Overlay (UNCHANGED) */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(120,130,150,0.25),transparent_55%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-[#0b1117]/60 to-[#000000]/30" />
+        </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
         {/* ===== Top header ===== */}
@@ -107,11 +109,11 @@ export default function WhatWeDo() {
             <h2 ref={Animation2Ref} className="text-white font-semibold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               Turning ideas into responsive websites and
               <br className="hidden sm:block" /> measurable 
-              <span className="text-[#ff00ea]"> business</span> results.
+              <span className="text-[var(--primary-color)]"> business</span> results.
             </h2>
           </div>
 
-          <p ref={Animation3Ref} className="text-gray-400 text-sm md:text-base max-w-md">
+          <p ref={Animation3Ref} className="text-[var(--primary-color)]/30 text-sm md:text-base max-w-md">
             Delivering responsive, user-friendly websites and web solutions that help businesses connect with customers and achieve real results.
           </p>
         </div>
@@ -121,11 +123,11 @@ export default function WhatWeDo() {
           {cards.map((card, i) => (
             <div
               key={i}
-              className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 md:p-8 min-h-[260px] flex flex-col justify-between hover:bg-white/[0.06] transition"
+              className="group relative rounded-2xl border border-[var(--primary-color)]/10 bg-white/[0.04] backdrop-blur-xl p-6 md:p-8 min-h-[260px] flex flex-col justify-between hover:bg-white/[0.06] transition"
             >
               {/* icon square */}
-              <div className="w-10 h-10 rounded-lg border border-white/20 flex items-center justify-center mb-6">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ff00ea]" />
+              <div className="w-10 h-10 rounded-lg border border-[var(--primary-color)]/20 flex items-center justify-center mb-6">
+                <div className="w-2.5 h-2.5 rounded-full bg-[var(--primary-color)]" />
               </div>
 
               <div>
@@ -133,7 +135,7 @@ export default function WhatWeDo() {
                   • {card.tag}
                 </p>
 
-                <h3 className="text-white text-lg md:text-xl font-medium leading-snug">
+                <h3 className="text-[var(--primary-color)]/80 text-lg md:text-xl font-medium leading-snug">
                   {card.title}
                 </h3>
 

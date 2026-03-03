@@ -21,7 +21,7 @@ const StatCard = ({ start, value, suffix = "", label, className = "" }) => {
     <div
       className={`bg-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col justify-center items-center min-h-[140px] ${className}`}
     >
-      <h2 className="text-white text-3xl md:text-5xl font-bold">
+      <h2 className="text-[var(--primary-color)]/40 text-3xl md:text-5xl font-bold">
         {start ? <CountUp end={value} duration={5.2} /> : 0}
         {suffix}
       </h2>
@@ -123,17 +123,20 @@ export default function StatPart2() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="grid md:grid-cols-2 gap-6 items-center mb-10">
-          <div>
+          <div className="overflow-hidden">
             <h2 ref={Animate1Ref} className="text-white text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
               We Turn Ideas 
               <br />
-              Into <span className="text-[#ff00ea]">Powerful </span>Digital Experiences
+              Into <span className="text-[var(--primary-color)]">Powerful </span>Digital Experiences
             </h2>
           </div>
 
-          <div ref={Animate2Ref} className="text-gray-400 text-sm md:text-base max-w-xl">
+          <div className="overflow-hidden">
+            <div ref={Animate2Ref} className="text-[var(--primary-color)]/30 text-sm md:text-base max-w-xl">
             We combine strategy, design, and technology to transform your ideas into engaging digital experiences that attract customers, build trust, and drive measurable growth.
           </div>
+          </div>
+          
         </div>
 
         {/* Mosaic Grid */}

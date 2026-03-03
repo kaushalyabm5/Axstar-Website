@@ -3,16 +3,19 @@
 
 :root {
     --font-logo: "Montserrat", sans-serif;
+    --primary-color: #09ff00;
 }
+
+
 
 html{
   scroll-behavior: smooth;
-  overflow: hidden;
+  
 }
 
 body{
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+ 
 }
 
 .logo{

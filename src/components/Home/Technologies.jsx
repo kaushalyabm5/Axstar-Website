@@ -1,0 +1,111 @@
+import React from "react";
+
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaNodeJs,
+  FaFigma,
+  FaGitAlt
+} from "react-icons/fa";
+
+import {
+  SiNextdotjs,
+  SiMongodb,
+  SiExpress,
+  SiMysql,
+  SiTailwindcss,
+  SiTypescript,
+  SiFirebase,
+  SiRedux
+} from "react-icons/si";
+
+const technologies = [
+  { icon: FaReact, name: "React", color: "#61DBFB" },
+  { icon: SiNextdotjs, name: "Next.js", color: "#ffffff" },
+  { icon: FaHtml5, name: "HTML5", color: "#E34F26" },
+  { icon: FaCss3Alt, name: "CSS3", color: "#1572B6" },
+  { icon: FaJs, name: "JavaScript", color: "#F7DF1E" },
+  { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
+  { icon: SiExpress, name: "Express", color: "#ffffff" },
+  { icon: FaNodeJs, name: "Node.js", color: "#68A063" },
+  { icon: FaFigma, name: "Figma", color: "#F24E1E" },
+  { icon: SiMysql, name: "MySQL", color: "#4479A1" },
+  { icon: SiTailwindcss, name: "Tailwind", color: "#38BDF8" },
+  { icon: FaGitAlt, name: "Git", color: "#F05032" },
+  { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+  { icon: SiFirebase, name: "Firebase", color: "#FFCA28" },
+  { icon: SiRedux, name: "Redux", color: "#764ABC" },
+];
+
+const Technologies = () => {
+  return (
+    <section className="w-full py-28 bg-black overflow-hidden">
+
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-semibold mb-16 text-gray-100 text-center">
+          Technologies We Use
+        </h2>
+
+        {/* Carousel */}
+        <div className="relative w-full overflow-hidden">
+
+          <div className="carousel-track flex w-max gap-4 md:gap-6 px-2 py-3">
+
+            {[...technologies, ...technologies].map((tech, index) => {
+              const Icon = tech.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="
+                  min-w-[110px] md:min-w-[140px]
+                  h-24 md:h-28
+                  bg-black/10
+                  backdrop-blur-md
+                  
+                  flex flex-col items-center justify-center
+                  transition duration-300
+                  "
+                >
+                  <Icon size={60} style={{ color: tech.color }} />
+
+                  <span className="text-xs md:text-sm mt-2 text-gray-200">
+                   
+                  </span>
+                </div>
+              );
+            })}
+
+          </div>
+
+        </div>
+      </div>
+
+      <style jsx>{`
+        .carousel-track {
+          animation: scroll 30s linear infinite;
+        }
+
+        .carousel-track:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
+
+    </section>
+  );
+};
+
+export default Technologies;

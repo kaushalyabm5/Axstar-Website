@@ -3,7 +3,7 @@
 
 :root {
     --font-logo: "Montserrat", sans-serif;
-    --primary-color: #09ff00;
+    --primary-color: #5dc192;
 }
 
 
@@ -15,6 +15,13 @@ html{
 
 body{
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+    180deg,
+    #000000 0%,
+    #0b140c 35%,
+    #364437 70%,
+    #343f33 100%
+  );
  
 }
 
@@ -42,7 +49,7 @@ body{
 
 /* ===== Track (Full Bar) ===== */
 ::-webkit-scrollbar-track {
-  background: linear-gradient(to bottom, #000000, #043602);
+  background: linear-gradient(to bottom, #000000, #1f4b36);
 }
 
 /* ===== Thumb (Moving Part) ===== */

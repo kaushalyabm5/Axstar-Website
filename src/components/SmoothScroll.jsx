@@ -1,7 +1,16 @@
-import { useEffect } from "react";
+// SmoothScroll.jsx
+import { useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import Lenis from "lenis";
 
-export default function SmoothScroll({ children }) {
+const SmoothScroll = forwardRef(({ children }, ref) => {
+  const lenisRef = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    scrollToTop: () => {
+      if (lenisRef.current) lenisRef.current.scrollTo(0, { duration: 0 }); // instant
+    },
+  }));
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1,
@@ -12,6 +21,8 @@ export default function SmoothScroll({ children }) {
       easing: (t) => 1 - Math.pow(1 - t, 4),
     });
 
+    lenisRef.current = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -19,10 +30,10 @@ export default function SmoothScroll({ children }) {
 
     requestAnimationFrame(raf);
 
-    return () => {
-      lenis.destroy();
-    };
+    return () => lenis.destroy();
   }, []);
 
   return children;
-}
+});
+
+export default SmoothScroll;

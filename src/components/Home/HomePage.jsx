@@ -9,7 +9,7 @@ import Stat from './Stat'
 import Process from './Process'
 import Testimonials from './Testimonials'
 import ProjectSection from './ProjectSection'
-import Contact from './Contact'
+
 import ScrollToTopHome from './ScrollToTopHome'
 
 
@@ -24,9 +24,9 @@ const HomePage = () => {
         <Stat/>
         <Process/>
         <Technologies/>
-        <ProjectSection/>
+       
         <Testimonials/>
-        <Contact/>
+        
         <ScrollToTopHome />
     </div>
   )

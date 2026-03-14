@@ -24,6 +24,10 @@ import Navbar from "./components/Navbar";
 import SmoothScroll from "./components/SmoothScroll";
 import ScrollToTop from "./components/ScrollToTop";
 import Loading from "./components/Loading";
+import Footer from "./components/Footer";
+import ContactPage from "./components/Contact/ContactPage";
+import ProjectsPage from "./components/Projects/ProjectsPage";
+import ProjectDetails from "./components/Projects/ProjectDetails";
 
 const AppWrapper = () => {
   const scrollRef = useRef();
@@ -68,6 +72,10 @@ const AppWrapper = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/project-details" element={<ProjectDetails />} />
+              
 
               {/* ===== IT & Technology Services ===== */}
               <Route path="/web-development" element={<WebDevelopment />} />
@@ -87,6 +95,7 @@ const AppWrapper = () => {
               <Route path="/business-documentation" element={<BussinessDocumentation />} />
               <Route path="/digital-consulting" element={<DigitalConsulting />} />
             </Routes>
+            <Footer />
           </div>
         </div>
       </SmoothScroll>

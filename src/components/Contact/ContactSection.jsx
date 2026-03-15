@@ -16,10 +16,7 @@ const ContactSection = () => {
           </h2>
 
           <p className="text-white leading-relaxed mb-8">
-            Use our contact form for all information requests or contact us
-            directly using the contact information below. All information is
-            treated with complete confidentiality and in accordance with our
-            <span className="text-[var(--primary-color)]"> data protection statement</span>.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum labore enim aliquid debitis facilis fugiat, sit atque sed hic autem eaque nesciunt consequatur cupiditate numquam nulla neque eveniet dignissimos quisquam!
           </p>
 
           <p className="text-white text-sm mb-3">
@@ -27,8 +24,8 @@ const ContactSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 text-[var(--primary-color)] font-medium">
-            <span>info@neoverv.com</span>
-            <span>+48 (0) 12 345 60 21</span>
+            <span>info@email.com</span>
+            <span>+94 77 123 456</span>
           </div>
         </div>
 

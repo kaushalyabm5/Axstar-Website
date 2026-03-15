@@ -2,42 +2,53 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const projects = [
-  {
+
+     {
     id: 1,
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
-    title: "Personal features and services",
+    image: "https://i.pinimg.com/736x/cb/d7/8d/cbd78d295e767641b7adc9021dc4bb10.jpg",
+    title: "Web Application For the EFG Company",
     description:
-      "It is important for a bank to have an online communication channel in order to provide a better experience and offer relevant personalized offers.",
-  
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsum repellendus? Doloribus aliquam itaque atque qui at a voluptate quis quidem nostrum assumenda repudiandae dolores, possimus eligendi porro iusto nisi?.",
+     
       requirements: [
-      "36 Compositions",
-      "Lightning-fast creation",
+      "Fully Responsive",
+      "SEO-friendly structure",
       "Beautiful light and dark mode",
-      "Fully customizable",
-      "Minimal & thoughtful designs",
+      "Cross-browser compatibility",
+      "Easy navigation and user-friendly layout",
+      "High-quality images and visuals",
+      "Smooth scrolling and animations",
+      "Optimized for conversions",
+      "Secure and reliable"
     ],
-    clientCountry: "USA",
-    industry: 'IT',
-    projectDuration: '2 Weeks',
-    projectType: 'Web App',
-    frontend: [
+    clientCountry: "Japan",
+    industry: 'Fashion Store',
+    duration: '1 Weeks',
+    projectType: 'Landing Page',
+    techStack: [
       "React",
-      "Tialwind",
+      "Tailwind CSS",
+      "Firebase",
+      "Lenis",
+      "GSAP",
     ],
-    backend: [
-      "Express",
-      "Python",
-    ]
+    security: ["jwt Auth", "Google Auth"],
+    status: "Completed",
+    projectSuccessRate: "4.8",
+    deliveryTime: "100%",
+    clientName: 'Hiroshi Tanaka',
+    clientImg: "https://randomuser.me/api/portraits/women/46.jpg",
 
     
     
   },
+  
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-    title: "New communication channel",
+    image: "https://i.pinimg.com/1200x/0b/98/23/0b9823cc17c74d97a62b6d4baa7293e8.jpg",
+    title: "Web Application For the XYZ Company",
     description:
-      "Billing technologies do not stand still and more people prefer to use mobile applications as the main channel of communication with banks.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsum repellendus? Doloribus aliquam itaque atque qui at a voluptate quis quidem nostrum assumenda repudiandae dolores, possimus eligendi porro iusto nisi?.",
      
       requirements: [
       "36 Compositions",
@@ -48,22 +59,57 @@ const projects = [
     ],
     clientCountry: "UK",
     industry: 'Retail',
-    projectDuration: '5 Weeks',
-    projectType: 'Mobile App',
-    frontend: [
+    duration: '5 Weeks',
+    projectType: 'Web Application',
+    techStack: [
       "React",
       "HTML",
       "CSS",
     ],
-    backend: [
-      "Ract",
-      "ML",
-      "SS",
-    ],
+    security: ["jwt Auth", "Google Auth"],
+    status: "Under Development",
+    projectSuccessRate: "4.5",
+    deliveryTime: "99%",
+    clientName: 'Raven Rayes',
+    clientImg: "https://randomuser.me/api/portraits/women/45.jpg",
 
     
     
   },
+
+  {
+    id: 3,
+    image: "https://i.pinimg.com/1200x/ba/2b/e5/ba2be5002b8a495e14533ad7c2ea8e6a.jpg",
+    title: "Website for ABC Company",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsum repellendus? Doloribus aliquam itaque atque qui at a voluptate quis quidem nostrum assumenda repudiandae dolores, possimus eligendi porro iusto nisi?",
+  
+      requirements: [
+      "36 Compositions",
+      "Lightning-fast creation",
+      "Beautiful light and dark mode",
+      "Fully customizable",
+      "Minimal & thoughtful designs",
+    ],
+    clientCountry: "USA",
+    industry: 'IT',
+    duration: '2 Weeks',
+    projectType: 'Website',
+    techStack: [
+      "React",
+      "Tialwind",
+    ],
+    security: ["jwd Auth", "Firebase"],
+    status: "Not Completed",
+    projectSuccessRate: "5.0",
+    deliveryTime: "100%",
+    clientName: "Clark Griffin",
+    clientImg: "https://randomuser.me/api/portraits/women/44.jpg",
+    
+    
+  },
+
+
 ];
 
 const ProjectShowcase = () => {
@@ -99,15 +145,15 @@ const ProjectShowcase = () => {
               </p>
 
               <div className="flex gap-3 justify-center mt-6">
-                <button className="px-4 py-2 text-sm rounded-lg bg-cyan-500 text-white">
+                <button className="cursor-pointer px-10 py-2 text-sm rounded-lg bg-[var(--primary-color)] text-black">
                   View
                 </button>
 
                 <button
                   onClick={() => handleDetails(project)}
-                  className="px-4 py-2 text-sm rounded-lg border border-gray-500 text-gray-300 hover:bg-gray-800"
+                  className="cursor-pointer px-10 py-2 text-sm rounded-lg border border-neutral-500 text-green-200 hover:bg-green-800"
                 >
-                  Details
+                  More Details
                 </button>
               </div>
             </div>

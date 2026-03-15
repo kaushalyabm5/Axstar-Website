@@ -18,7 +18,7 @@ const ContactHero = () => {
 
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-semibold leading-tight max-w-4xl mx-auto">
-         Get In Touch
+         Connecting Ideas, Building Solutions
         </h1>
 
         {/* Subtitle */}

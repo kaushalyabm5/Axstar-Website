@@ -3,7 +3,9 @@ import {
   FaInstagram,
   FaDribbble,
   FaBehance,
-  FaSearch
+  FaSearch,
+  FaFacebook,
+  FaPinterest
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -78,11 +80,11 @@ const Footer = () => {
 
           <div className="grid grid-cols-4 gap-3 w-[180px]">
             <div className="bg-[var(--primary-color)] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
-              <FaInstagram size={18} className="text-white" />
+              <FaFacebook size={18} className="text-white" />
             </div>
 
             <div className="bg-[var(--primary-color)] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
-              <FaDribbble size={18} className="text-white" />
+              <FaInstagram size={18} className="text-white" />
             </div>
 
         <div className="bg-[var(--primary-color)] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
@@ -90,7 +92,7 @@ const Footer = () => {
             </div>
 
             <div className="bg-[var(--primary-color)] hover:bg-gray-600 w-10 h-10 rounded flex items-center justify-center cursor-pointer transition">
-              <FaSearch size={18} className="text-white" />
+              <FaPinterest size={18} className="text-white" />
             </div>
           </div>
         </div>

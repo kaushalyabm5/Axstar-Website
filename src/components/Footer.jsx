@@ -100,7 +100,7 @@ const Footer = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-700 mt-12 pt-6 text-sm text-gray-400">
+      <div className="border-t border-gray-700 mt-12 pt-6 pb-15 text-sm text-gray-400">
         © 2026 AXSTAR. All Rights Reserved.
       </div>
 

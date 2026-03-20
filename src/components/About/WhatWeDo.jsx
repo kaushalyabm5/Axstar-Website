@@ -26,7 +26,7 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section className="w-full py-20 px-6 bg-[#000000]">
+    <section className="w-full py-30 px-6 bg-[#000000]">
 
         
       <div className="max-w-7xl mx-auto">

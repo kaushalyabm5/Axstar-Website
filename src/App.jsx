@@ -28,6 +28,8 @@ import Footer from "./components/Footer";
 import ContactPage from "./components/Contact/ContactPage";
 import ProjectsPage from "./components/Projects/ProjectsPage";
 import ProjectDetails from "./components/Projects/ProjectDetails";
+import WhatsAppPopup from "./components/WhatsAppPopup";
+import CareersPage from "./components/Careers/CareersPage";
 
 const AppWrapper = () => {
   const scrollRef = useRef();
@@ -45,7 +47,7 @@ const AppWrapper = () => {
     setLoading(true);
     const timer = setTimeout(() => setLoading(false), 500); // shorter loader for navigation
     return () => clearTimeout(timer);
-  }, [location]);
+  }, [location.pathname]);
 
   return (
     <>
@@ -75,6 +77,7 @@ const AppWrapper = () => {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/project-details" element={<ProjectDetails />} />
+              <Route path="/careers" element={<CareersPage />} />
               
 
               {/* ===== IT & Technology Services ===== */}
@@ -95,6 +98,7 @@ const AppWrapper = () => {
               <Route path="/business-documentation" element={<BussinessDocumentation />} />
               <Route path="/digital-consulting" element={<DigitalConsulting />} />
             </Routes>
+            <WhatsAppPopup />
             <Footer />
           </div>
         </div>

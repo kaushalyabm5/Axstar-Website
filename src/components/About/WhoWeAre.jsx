@@ -3,7 +3,7 @@ export default function WhoWeAre() {
     <section id="who" className="w-full bg-black text-white pt-16">
 
       {/* Centered Content */}
-      <div className="max-w-5xl py-15 mx-auto text-center px-6">
+      <div className="max-w-5xl py-30 mx-auto text-center px-6">
         
         {/* Title */}
         <h2 className="text-3xl sm:text-4xl font-semibold mb-6">
@@ -21,7 +21,7 @@ export default function WhoWeAre() {
 
 
       {/* FULL WIDTH SECTION */}
-      <div className="w-full bg-gradient-to-r from-[#000000] via-[var(--primary-color)]/30 to-[#000000] text-white py-20 mt-14 px-6">
+      <div className="w-full bg-gradient-to-r from-[#000000] via-[var(--primary-color)]/30 to-[#000000] text-white py-30 mt-14 px-6">
         
         <div className="max-w-6xl mx-auto">
 

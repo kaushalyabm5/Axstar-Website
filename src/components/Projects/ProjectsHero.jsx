@@ -3,7 +3,7 @@ import { FaArrowDown, FaPlay } from "react-icons/fa";
 
 const ProjectsHero = () => {
   return (
-    <section id="services-hero" className="relative w-full bg-black text-white overflow-hidden">
+    <section id="projects-hero" className="relative w-full bg-black text-white overflow-hidden">
 
       {/* Top spacing */}
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 text-center">

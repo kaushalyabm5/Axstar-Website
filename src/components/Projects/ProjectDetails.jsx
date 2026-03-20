@@ -2,6 +2,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaChartLine, FaCheckCircle, FaClock, FaUser } from "react-icons/fa";
+import ScrollToTopProjectsDetails from "./ScrollToTopProjectsDetails";
 
 const ProjectDetails = () => {
   const location = useLocation();
@@ -30,7 +31,7 @@ const ProjectDetails = () => {
   }
 
   return (
-    <section className="w-full bg-[#000000] text-white">
+    <section id="project-details" className="w-full bg-[#000000] text-white">
 
       {/* HERO IMAGE */}
       <div className="relative w-full h-[320px] md:h-[420px] lg:h-[520px]">
@@ -250,6 +251,8 @@ const ProjectDetails = () => {
 
         </div>
       </div>
+
+      <ScrollToTopProjectsDetails />
 
     </section>
   );

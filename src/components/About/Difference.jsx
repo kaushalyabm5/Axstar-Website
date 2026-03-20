@@ -22,7 +22,7 @@ const Difference = () => {
   ];
 
   return (
-    <section className="w-full py-16 bg-black">
+    <section className="w-full py-30 bg-black">
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Title */}

@@ -16,8 +16,10 @@ import logo from "../assets/c1.png";
 /* ---------------- NAV ITEMS ---------------- */
 const navItems = [
   { id: "home", label: "Home", icon: <FiHome size={20} />, path: "/" },
-  { id: "about", label: "About Us", icon: <FiUser size={20} />, path: "/about" },
   { id: "services", label: "Services", icon: <FiGrid size={20} />, path: "/services" },
+  { id: "about", label: "About Us", icon: <FiUser size={20} />, path: "/about" },
+  { id: "careers", label: "Careers", icon: <FiUser size={20} />, path: "/careers" },
+  
   { id: "projects", label: "Projects", icon: <FiFolder size={20} />, path: "/projects" },
   { id: "contact", label: "Contact Us", icon: <FiPhone size={20} />, path: "/contact" },
 ];
@@ -33,7 +35,7 @@ const servicesLinks = [
 const itTechSubServices = [
   { label: "Web Development", path: "/web-development" },
   { label: "Mobile App Development", path: "/mobile-app-development" },
-  { label: "AI-Driven Solutions", path: "/ai-driven-solutions" },
+  { label: "AI Driven & Automation Solutions", path: "/ai-driven-solutions" },
   { label: "E-commerce Software Solutions", path: "/ecommerce" },
   { label: "Digital Presence Setup", path: "/digital-presence" },
 ];
@@ -217,7 +219,7 @@ export default function Navbar() {
                                   <Link
                                     key={i}
                                     to={s.path}
-                                    className="block text-white/80 py-1"
+                                    className="block text-[var(--primary-color)]/50 py-1"
                                   >
                                     {s.label}
                                   </Link>

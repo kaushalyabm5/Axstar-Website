@@ -8,9 +8,11 @@ import Technologies from './Technologies'
 import Stat from './Stat'
 import Process from './Process'
 import Testimonials from './Testimonials'
-import ProjectSection from './ProjectSection'
+
 
 import ScrollToTopHome from './ScrollToTopHome'
+
+
 
 
 const HomePage = () => {
@@ -19,6 +21,7 @@ const HomePage = () => {
         
         <Hero/>
         <About/>
+     
         <Services/>
         <WhyChooseUs/>
         <Stat/>
